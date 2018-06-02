@@ -12,7 +12,7 @@
 function MyGameEngine(req,val){
   let xhr=new XMLHttpRequest();
   xhr.open('GET','gameRouter.php?'+req+'='+val,true);
-  xhr.onload=function(){
+  xhr.onload=()=>{
     let data=xhr.responseText;
     if(req==='new'||req==='chooseMine'){
       let myCharacter=document.querySelector('.myCharacter');
@@ -91,23 +91,23 @@ let choosePersonnage=document.getElementById('choosePersonnage');
 let createPersonnage=document.getElementById('createPersonnage');
 //Etapes de création de joueur
 let createMine=document.querySelector('#createMine');
-createPersonnage.onclick=function(){
+createPersonnage.onclick=()=>{
   hideChoices();
   create.classList.remove('hidden');
 };
-createMine.onclick=function(){
+createMine.onclick=()=>{
   let val=document.querySelector('#nom').value;
   document.querySelector('#nom').value='';
   MyGameEngine('new',val);
   divHider('show2');
 };
 //Etapes de sélection de joueur
-choosePersonnage.onclick=function(){
+choosePersonnage.onclick=()=>{
   hideChoices();
   choose.classList.remove('hidden');
 };
 let chooseThis=document.querySelector('#chooseThis');
-chooseThis.onclick=function(){
+chooseThis.onclick=()=>{
   let selectedOne=selectCharacterOnOptions('characterList');
   MyGameEngine('chooseMine',selectedOne.value);
   divHider('show2');
@@ -124,7 +124,7 @@ attakButton.addEventListener('click',()=>{
     lifeNotifier.removeChild(restInPeaceImg);
 
   }
-  setTimeout(function(){
+  setTimeout(()=>{
   document.body.style.backgroundColor='#fff';
   },200);
 },false);
