@@ -10,7 +10,7 @@ require 'gameRouter.php';
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
   <script type="text/javascript" src="app.js" async></script>
   <title>Mini jeu de combat</title>
 </head>
