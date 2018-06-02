@@ -1,5 +1,11 @@
 <?php
 /**
+ * Copyright Mai 2018 -- Sidy Mbengue email:sidymbengue25@gmail.com
+ * compte github : https://github.com/sidymbengue25
+ */
+
+
+/**
  * Pour gérer le combat et les enregistrement ds le BDD
  */
 class ManagerPersonnage
@@ -55,8 +61,8 @@ class ManagerPersonnage
   public function update(Personnage $perso)
   {
     $q=$this->_db->prepare('UPDATE personnages SET degats=:degats where id=:id');
-    $q->bindValue(':degats',$perso->getDegats());
-    $q->bindValue(':id',$perso->getId());
+    $q->bindValue(':degats',$perso->getDegats(),PDO::PARAM_INT);
+    $q->bindValue(':id',$perso->getId(),PDO::PARAM_INT);
     $q->execute();
   }
   /**
@@ -65,10 +71,9 @@ class ManagerPersonnage
    */
   public function delete(Personnage $perso)
   {
-    $q=$this->_db->prepare('DELETE personnages where id=:id');
-    $q->bindValue(':id',$perso->getId());
+    $q=$this->_db->prepare('DELETE from personnages where id=:id');
+    $q->bindValue(':id',$perso->getId(),PDO::PARAM_INT);
     $q->execute();
-    echo $perso->getName().' est mort';
   }
 }
 ?>

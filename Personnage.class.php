@@ -1,6 +1,11 @@
 <?php
 /**
- * class personnage de jeu
+ * Copyright Mai 2018 -- Sidy Mbengue email:sidymbengue25@gmail.com
+ * compte github : https://github.com/sidymbengue25
+ */
+
+/**
+ * class Personnage de jeu : elle permet de visualiser les infos des personnages
  */
 class Personnage
 {
@@ -11,6 +16,10 @@ class Personnage
   {
     $this->hydrate($donnees);
   }
+  /**
+   * Elle permet l'hydration de l'objet
+   * @param  [array] $donnees
+   */
   public function hydrate($donnees)
   {
     foreach ($donnees as $key => $value) {
@@ -20,10 +29,11 @@ class Personnage
       }
     }
   }
+  //Les Getters
   public function getId(){return $this->_id;}
   public function getNom(){return $this->_nom;}
   public function getDegats(){return $this->_degats;}
-
+  //Les Setters
   public function setId($id)
   {
     $id=(int)$id;
@@ -38,8 +48,7 @@ class Personnage
     }
   }
   public function setDegats($degats){
-    $degats=(int)$degats;
-    if(is_int($degats)){$this->_degats+=5;}
+    $this->_degats+=$degats;
   }
 }
 ?>

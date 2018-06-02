@@ -5837,3 +5837,22 @@ td.visible-print {
 .myCharacter{
   cursor:no-drop;;
 }
+body{
+  transition: background 0.1s linear;
+}
+.lifeNotifier{
+  margin-top: 20px;
+  font-size: 25px;
+}
+#lifeBar{
+  width: 200px;
+  height: 18px;
+}
+.lifeNotifier img{
+  width: 300px;
+  height: 300px;
+}
+footer{
+  font-size: 25px;
+  margin-top: 300px;
+}

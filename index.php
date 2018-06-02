@@ -1,6 +1,10 @@
 <?php
+/**
+ * Copyright Mai 2018 -- Sidy Mbengue email:sidymbengue25@gmail.com
+ * compte github : https://github.com/sidymbengue25
+ */
+
 require 'gameRouter.php';
-$all=$manager->getAll();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +20,7 @@ $all=$manager->getAll();
     <button id='choosePersonnage' class="btn btn-success choices">Choisir un combattant</button>
     <button id="createPersonnage" class="btn btn-warning choices">Créer mon propre combattant</button><br><br>
     <div class="form-group choose hidden">
-      <select class="select form-control">
+      <select class="select form-control" id="characterList">
         <?php
           for($i=0;$i<count($all);$i++) {?>
             <option value="<?=$all[$i]->getId()?>"><?=$all[$i]->getNom()?></option>
@@ -30,17 +34,28 @@ $all=$manager->getAll();
   </div>
   <div class="main-content2 col-md-8 col-md-offset-2 hidden">
     <h1>Mini game de combat</h1>
-      <button id="" class="myCharacter btn btn-info">Tu es </button><br><br>
+      <button id="" class="myCharacter btn btn-info">Je suis </button><br><br>
       <div class="ennemiSelectArea">
-        <select class="ennemi form-control">
+        <button id="iAttak" class="btn btn-danger">J'attaque</button>
+        <div class="lifeNotifier hidden">
+          <span>
+            <progress value="" max="100" class="progress-bar " id="lifeBar"></progress>
+          </span>
+        </div><br><br>
+        <select class="ennemi form-control" id="enemiesList">
           <?php
             for($i=0;$i<count($all);$i++) {?>
               <option value="<?=$all[$i]->getId()?>"><?=$all[$i]->getNom()?></option>
            <?php } ?>
         </select>
-        <button id="chooseEnnemi" class="btn btn-danger">Choisir ton adversaire</button>
+        <audio id="songsPlayer">
+          <source src="">
+        </audio>
       </div>
     </div>
-  </div>
+  <footer class="col-md-10 col-md-offset-1">
+    Copyright Mai 2018 -- Sidy Mbengue email:sidymbengue25@gmail.com<br>
+    compte github : https://github.com/sidymbengue25
+ </footer>
 </body>
 </html>
