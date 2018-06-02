@@ -1,0 +1,7 @@
+Mini Jeu de combat
+Configuration :
+  a)un personnage doit avoir un nom unique,
+  b)des dégats(0-100)=>au début 0 =>chaque coup =5dégats. SI dégats=100 le personnage est mort et on le supprime de la BDD
+1)L'utilisateur doit pouvoir créer son personnage(pas de mdp pour faire simple)
+2)Avec son personnage il peut frapper d'autres personnages
+3)Le personnage frappé se verra infliger un certain degré de dégats
