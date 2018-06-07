@@ -4,9 +4,9 @@
  * compte github : https://github.com/sidymbengue25
  */
 
-/**
- * class Personnage de jeu : elle permet de visualiser les infos des personnages
- */
+//////////////////////////////////////////////////////////////////////////////////
+//class Personnage de jeu : elle permet de visualiser les infos des personnages //
+//////////////////////////////////////////////////////////////////////////////////
 class Personnage
 {
   private $_id;
@@ -29,11 +29,15 @@ class Personnage
       }
     }
   }
-  //Les Getters
+  ////////////////
+  //Les Getters //
+  ////////////////
   public function getId(){return $this->_id;}
   public function getNom(){return $this->_nom;}
   public function getDegats(){return $this->_degats;}
-  //Les Setters
+  ////////////////
+  //Les Setters //
+  ////////////////
   public function setId($id)
   {
     $id=(int)$id;

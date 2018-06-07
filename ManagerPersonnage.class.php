@@ -4,10 +4,9 @@
  * compte github : https://github.com/sidymbengue25
  */
 
-
-/**
- * Pour gérer le combat et les enregistrement ds le BDD
- */
+ /////////////////////////////////////////////////////////
+ //Pour gérer le combat et les enregistrement ds le BDD //
+ /////////////////////////////////////////////////////////
 class ManagerPersonnage
 {
   private $_db;

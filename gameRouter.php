@@ -14,11 +14,15 @@ function chargerClass($class){
 }
 spl_autoload_register('chargerClass');
 $manager=new ManagerPersonnage($db);
-//liste de tous les Personnages
+//////////////////////////////////
+//liste de tous les Personnages //
+//////////////////////////////////
 $all=$manager->getAll();
-/**
- * L'utilisteur a initialisé une requête de type 'attaque' : il a attaqué un ennemi, chaque attaque inflige un dégats de 5 à l'ennemi
- */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//L'utilisteur a initialisé une requête de type 'attaque' : il a attaqué un ennemi, chaque attaque inflige un dégats de 5 à l'ennemi  //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 if(isset($_GET['attak']) and !empty($_GET['attak'])){
   $id=intval($_GET['attak']);
   $attaked=$manager->get($id);
@@ -33,9 +37,9 @@ if(isset($_GET['attak']) and !empty($_GET['attak'])){
     echo $vie;
   }
 }
-/**
- * L'utilisteur a initialisé une requête de type 'new' : créer son propre Joueur
- */
+//////////////////////////////////////////////////////////////////////////////////
+//L'utilisteur a initialisé une requête de type 'new' : créer son propre Joueur //
+//////////////////////////////////////////////////////////////////////////////////
 if(isset($_GET['new']) and !empty($_GET['new'])){
   $nom=htmlspecialchars($_GET['new']);
   $donnees=array(
@@ -48,9 +52,9 @@ if(isset($_GET['new']) and !empty($_GET['new'])){
   $perso=$manager->get($last_id);
   echo $perso->getNom();
 }
-/**
- * L'utilisteur a initialisé une requête de type 'choose' : il utilise un des joueur existant
- */
+///////////////////////////////////////////////////////////////////////////////////////////////
+//L'utilisteur a initialisé une requête de type 'choose' : il utilise un des joueur existant //
+///////////////////////////////////////////////////////////////////////////////////////////////
 if(isset($_GET['chooseMine']) and !empty($_GET['chooseMine'])){
   $id=intval($_GET['chooseMine']);
   $myWarrior=$manager->get($id);

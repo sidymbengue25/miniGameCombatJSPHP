@@ -19,12 +19,16 @@ function MyGameEngine(req,val){
       myCharacter.innerText+=' '+data;
     }else{
       if(data>0){
-      //Il est toujours en vie
+      ///////////////////////////
+      //Il est toujours en vie //
+      ///////////////////////////
         idPlayer.src='songs/crying.mp3';
         lifeBar.value=data;
         playTheSoung(idPlayer);
       }else{
-      //Il est mort
+      ////////////////
+      //Il est mort //
+      ////////////////
         idPlayer.src='songs/see you again.mp3';
         playTheSoung(idPlayer);
         childOfLifeNotifier.classList.add('hidden');
@@ -46,8 +50,10 @@ function hideChoices(){
     elem.classList.add('hidden');
   });
 }
+
 /**
  * Pour switcher entre les div
+ * @param  {string} elem div à afficher
  */
 function divHider(elem){
   if(elem==='show1'){
@@ -83,13 +89,19 @@ let create=document.querySelector('.create');
 let lifeBar=document.querySelector('#lifeBar');
 let lifeNotifier=document.querySelector('.lifeNotifier');
 let childOfLifeNotifier=document.querySelector('.lifeNotifier span');
-//Image à afficher si l'ennemi est mort
+//////////////////////////////////////////
+//Image à afficher si l'ennemi est mort //
+//////////////////////////////////////////
 let restInPeaceImg=new Image();
 restInPeaceImg.src='img/RIP.gif';
-//Boutons de choix initial du joueur
+///////////////////////////////////////
+//Boutons de choix initial du joueur //
+///////////////////////////////////////
 let choosePersonnage=document.getElementById('choosePersonnage');
 let createPersonnage=document.getElementById('createPersonnage');
-//Etapes de création de joueur
+/////////////////////////////////
+//Etapes de création de joueur //
+/////////////////////////////////
 let createMine=document.querySelector('#createMine');
 createPersonnage.onclick=()=>{
   hideChoices();
@@ -101,7 +113,9 @@ createMine.onclick=()=>{
   MyGameEngine('new',val);
   divHider('show2');
 };
-//Etapes de sélection de joueur
+//////////////////////////////////
+//Etapes de sélection de joueur //
+//////////////////////////////////
 choosePersonnage.onclick=()=>{
   hideChoices();
   choose.classList.remove('hidden');
@@ -112,7 +126,9 @@ chooseThis.onclick=()=>{
   MyGameEngine('chooseMine',selectedOne.value);
   divHider('show2');
 };
-//Combats
+////////////
+//Combats //
+////////////
 let attakButton=document.querySelector('#iAttak');
 attakButton.addEventListener('click',()=>{
   let attakedOne=selectCharacterOnOptions('enemiesList');
@@ -128,7 +144,10 @@ attakButton.addEventListener('click',()=>{
   document.body.style.backgroundColor='#fff';
   },200);
 },false);
-// Soung contaniner
+//////////////////////
+// Soung contaniner //
+//////////////////////
+/** @type {string} [id du player] */
 let idPlayer=document.querySelector('#songsPlayer');
 /**
  * Elle permet de jouer un audio
